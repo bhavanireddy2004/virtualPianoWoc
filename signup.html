@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/auth.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo_container">
+            <h1>virtual<span>PIANO</span></h1>
+            <ul class="navigation">
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+               
+                <a href="about.html">
+                    <li>About</li>
+                </a>
+                <a href="signin.html">
+                    <li>sign in</li>
+                </a>
+                <a href="signup.html">
+                    <li>sign up</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="inner_box">
+                <div class="cardfront">
+                    <h2>SIGN UP</h2>
+                    <form id="loginform">
+                        <input type="text" class="input-box" placeholder="First Name" required>
+                        <input type="text" class="input-box" placeholder="Last Name" required>
+                        <input type="email" class="input-box" id="email" placeholder="Email ID" required>
+                        <input type="text" class="input-box" placeholder="Create Password" id="password" required>
+                        <button type="submit" class="submit-btn" id="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/9.6.11/firebase-auth.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDJuMkrDrPtZkSCoOdk51ZNp0HL_Axt6kE",
+            authDomain: "bhavani-58e29.firebaseapp.com",
+            databaseURL: "https://bhavani-58e29-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "bhavani-58e29",
+            storageBucket: "bhavani-58e29.appspot.com",
+            messagingSenderId: "512918257819",
+            appId: "1:512918257819:web:1fce86b681b3843c9f063e"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        document.getElementById("submit").addEventListener('click', function (event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value
+            const password = document.getElementById("password").value
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    console.log(userCredential)
+                    updateProfile(auth.currentUser, {
+                        displayName: "firstName lastName",
+                    }).then(() => {
+                        window.location = "index.html"
+                    })
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    // ..
+                    console.log(errorCode + errorMessage);
+                });
+
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>virtual piano</title>
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo_container">
+            <h1>virtual<span>PIANO</span></h1>
+            <ul class="navigation">
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+               
+                <a href="about.html">
+                    <li>About</li>
+                </a>
+                <a id='signin' href="signin.html">
+                    <li>sign in</li>
+                </a>
+                <a id = 'signup' href="signup.html">
+                    <li>sign up</li>
+                </a>
+                <a id="logout">
+                    <li>LogOut</li>
+                </a>
+
+            </ul>
+        </div>
+    </div>
+   
+  
+    <div class="container2">
+        
+        <h1 class="time">Practise time <br><span class="xcv">(displayed in minutes)</span></h1>
+        <p><span id="second">00</span>:<span id="tens">00</span> </p>
+        <button id="btn-start">Start</button>
+        <button id="btn-stop">Stop</button>
+        <button id="btn-reset">Reset</button>
+    </div>
+    
+    
+ 
+    <!-- <div class="savedrecordings" id="saved"> <div class="flex">Saved Recordings </div> 
+    <div class="recordingsList"></div> -->
+</div>
+
+
+ 
+    <div class="container3">
+        <button id="record" class="record">Record</button>
+        <br>
+        <button id="play" class="play">Play</button>
+        <br>
+        <button id="save" class="save">Save</button>
+    </div>
+
+
+    <div class="piano">
+        <div class="key white" data-note="C2">1</div>
+        <div class="key black" data-note="C2s">!</div>
+        <div class="key white" data-note="D2">2</div>
+        <div class="key black" data-note="D2s">@</div>
+        <div class="key white" data-note="E2">3</div>
+        <div class="key white" data-note="F2">4</div>
+        <div class="key black" data-note="F2s">$</div>
+        <div class="key white" data-note="G2">5</div>
+        <div class="key black" data-note="G2s">%</div>
+        <div class="key white" data-note="A2">6</div>
+        <div class="key black" data-note="A2s">^</div>
+        <div class="key white" data-note="B2">7</div>
+        <div class="key white" data-note="C3">8</div>
+        <div class="key black" data-note="C3s">*</div>
+        <div class="key white" data-note="D3">9</div>
+        <div class="key black" data-note="D3s">(</div>
+        <div class="key white" data-note="E3">0</div>
+        <div class="key white" data-note="F3">q</div>
+        <div class="key black" data-note="F3s">Q</div>
+        <div class="key white" data-note="G3">w</div>
+        <div class="key black" data-note="G3s">W</div>
+        <div class="key white" data-note="A3">e</div>
+        <div class="key black" data-note="A3s">E</div>
+        <div class="key white" data-note="B3">r</div>
+        <div class="key white" data-note="C4">t</div>
+        <div class="key black" data-note="C4s">T</div>
+        <div class="key white" data-note="D4">y</div>
+        <div class="key black" data-note="D4s">Y</div>
+        <div class="key white" data-note="E4">u</div>
+        <div class="key white" data-note="F4">i</div>
+        <div class="key black" data-note="F4s">I</div>
+        <div class="key white" data-note="G4">o</div>
+        <div class="key black" data-note="G4s">O</div>
+        <div class="key white" data-note="A4">p</div>
+        <div class="key black" data-note="A4s">P</div>
+        <div class="key white" data-note="B4">a</div>
+        <div class="key white" data-note="C5">s</div>
+        <div class="key black" data-note="C5s">S</div>
+        <div class="key white" data-note="D5">d</div>
+        <div class="key black" data-note="D5s">D</div>
+        <div class="key white" data-note="E5">f</div>
+        <div class="key white" data-note="F5">g</div>
+        <div class="key black" data-note="F5s">G</div>
+        <div class="key white" data-note="G5">h</div>
+        <div class="key black" data-note="G5s">H</div>
+        <div class="key white" data-note="A5">j</div>
+        <div class="key black" data-note="A5s">J</div>
+        <div class="key white" data-note="B5">k</div>
+        <div class="key white" data-note="C6">l</div>
+        <div class="key black" data-note="C6s">L</div>
+        <div class="key white" data-note="D6">z</div>
+        <div class="key black" data-note="D6s">Z</div>
+        <div class="key white" data-note="E6">x</div>
+        <div class="key white" data-note="F6">c</div>
+        <div class="key black" data-note="F6s">C</div>
+        <div class="key white" data-note="G6">v</div>
+        <div class="key black" data-note="G6s">V</div>
+        <div class="key white" data-note="A6">b</div>
+        <div class="key black" data-note="A6s">B</div>
+        <div class="key white" data-note="B6">n</div>
+        <div class="key white" data-note="C7">m</div>
+
+
+
+    </div>
+    <audio src="music/C2.mp3" id="C2"></audio>
+    <audio src="music/C2s.mp3" id="C2s"></audio>
+    <audio src="music/D2.mp3" id="D2"></audio>
+    <audio src="music/D2s.mp3" id="D2s"></audio>
+    <audio src="music/E2.mp3" id="E2"></audio>
+    <audio src="music/F2.mp3" id="F2"></audio>
+    <audio src="music/F2s.mp3" id="F2s"></audio>
+    <audio src="music/G2.mp3" id="G2"></audio>
+    <audio src="music/G2s.mp3" id="G2s"></audio>
+    <audio src="music/A2.mp3" id="A2"></audio>
+    <audio src="music/A2s.mp3" id="A2s"></audio>
+    <audio src="music/B2.mp3" id="B2"></audio>
+    <audio src="music/C3.mp3" id="C3"></audio>
+    <audio src="music/C3s.mp3" id="C3s"></audio>
+    <audio src="music/D3.mp3" id="D3"></audio>
+    <audio src="music/D3s.mp3" id="D3s"></audio>
+    <audio src="music/E3.mp3" id="E3"></audio>
+    <audio src="music/F3.mp3" id="F3"></audio>
+    <audio src="music/F3s.mp3" id="F3s"></audio>
+    <audio src="music/G3.mp3" id="G3"></audio>
+    <audio src="music/G3s.mp3" id="G3s"></audio>
+    <audio src="music/A3.mp3" id="A3"></audio>
+    <audio src="music/A3s.mp3" id="A3s"></audio>
+    <audio src="music/B3.mp3" id="B3"></audio>
+    <audio src="music/C4.mp3" id="C4"></audio>
+    <audio src="music/C4s.mp3" id="C4s"></audio>
+    <audio src="music/D4.mp3" id="D4"></audio>
+    <audio src="music/D4s.mp3" id="D4s"></audio>
+    <audio src="music/E4.mp3" id="E4"></audio>
+    <audio src="music/F4.mp3" id="F4"></audio>
+    <audio src="music/F4s.mp3" id="F4s"></audio>
+    <audio src="music/G4.mp3" id="G4"></audio>
+    <audio src="music/G4s.mp3" id="G4s"></audio>
+    <audio src="music/A4.mp3" id="A4"></audio>
+    <audio src="music/A4s.mp3" id="A4s"></audio>
+    <audio src="music/B4.mp3" id="B4"></audio>
+    <audio src="music/C5.mp3" id="C5"></audio>
+    <audio src="music/C5s.mp3" id="C5s"></audio>
+    <audio src="music/D5.mp3" id="D5"></audio>
+    <audio src="music/D5s.mp3" id="D5s"></audio>
+    <audio src="music/E5.mp3" id="E5"></audio>
+    <audio src="music/F5.mp3" id="F5"></audio>
+    <audio src="music/F5s.mp3" id="F5s"></audio>
+    <audio src="music/G5.mp3" id="G5"></audio>
+    <audio src="music/G5s.mp3" id="G5s"></audio>
+    <audio src="music/A5.mp3" id="A5"></audio>
+    <audio src="music/A5s.mp3" id="A5s"></audio>
+    <audio src="music/B5.mp3" id="B5"></audio>
+    <audio src="music/C6.mp3" id="C6"></audio>
+    <audio src="music/C6s.mp3" id="C6s"></audio>
+    <audio src="music/D6.mp3" id="D6"></audio>
+    <audio src="music/D6s.mp3" id="D6s"></audio>
+    <audio src="music/E6.mp3" id="E6"></audio>
+    <audio src="music/F6.mp3" id="F6"></audio>
+    <audio src="music/F6s.mp3" id="F6s"></audio>
+    <audio src="music/G6.mp3" id="G6"></audio>
+    <audio src="music/G6s.mp3" id="G6s"></audio>
+    <audio src="music/A6.mp3" id="A6"></audio>
+    <audio src="music/A6s.mp3" id="A6s"></audio>
+    <audio src="music/B6.mp3" id="B6"></audio>
+    <audio src="music/C7.mp3" id="C7"></audio>
+   
+
+
+
+
+
+
+
+    <script src="JAVASCRIPT/script.js" type="module"></script>
+</body>
+
+</html>
