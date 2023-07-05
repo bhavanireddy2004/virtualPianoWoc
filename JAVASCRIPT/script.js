@@ -42,25 +42,31 @@ onAuthStateChanged(auth, (user) => {
                 window.location.reload();
             });
         })
-        set(child(dbRef, "users/" + userData.uid + "/recordings/" + "title"), { test: "123" })
-            .catch((error) => { console.log(error) });
                 get(child(dbRef, "users/"  + userData.uid + "/recordings/"))
                 .then((snapshot) => { 
                     if (snapshot.exists()) {
                         recordings=snapshot.val();
                         console.log(recordings)
-                        // recordings= snapshot.val().recordings;
-                        // console.log(recordings);
-   
                       } else {
                         console.log("No data available");
                       }
-
-                    // snapshot.forEach(childsnapshot => {
-                    // recordings.push(childsnapshot.val());
+                      let list = document.getElementById("recordingsList");
+                      console.log(list);
+                      Object.keys(recordings).forEach((item) => {
+                        let li = document.createElement("li");
+                        li.innerText = item;
+                        li.id = item;
+                        li.addEventListener("click", () => {
+                          playSong(recordings[item]);
+                        });
+                        list.appendChild(li);
+                      });
                 })
     } else {
         document.getElementById('logout').style.display = "none";
+        document.getElementById('record').style.display = "none";
+        document.getElementById('play').style.display = "none";
+        document.getElementById('save').style.display = "none";
     }
 });
 
@@ -191,6 +197,13 @@ function saveSong() {
      console.log("user data exists and saved song")
      set(child(dbRef, "users/" + userData.uid + "/recordings/" + title), songNotes)
     }
+    let listItem = document.createElement("li");
+    listItem.innerText = title;
+    listItem.id = title;
+    listItem.addEventListener("click", () => {
+      playSong(recordings[title]);
+    });
+    document.getElementById("recordingsList").appendChild(listItem);
 }
 
 let recordingsList= document.querySelector("recordingsList");
