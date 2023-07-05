@@ -61,27 +61,24 @@ body{
 }  
 .piano{
     display: flex;
-    justify-content: center;   
+    /* justify-content: center;    */
 }
 .white{
-    width: 6vh;
+    width: 5vh;
     height: 30vh;
     background-color: white;
     border: 1px solid grey;
     padding-top: 5px;
     border-bottom-right-radius: 5px;  
     border-bottom-left-radius: 5px; 
-     
-    
-    
 }
 .black{
     width: 4vh;
     height: 17vh;
     background-color: black;
-    border: 1px solid grey;
-    margin-left: -3vh;
-    margin-right: -3vh;
+    /* border: 0.5px solid grey; */
+    margin-left: -2vh;
+    margin-right: -2vh;
     z-index: 2;
     border-bottom-right-radius: 5px;  
     border-bottom-left-radius: 5px; 
@@ -95,7 +92,7 @@ body{
     background-color: #333;
 }
 .white{
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: flex-end;
   font-size: 1.2rem;
@@ -110,8 +107,6 @@ body{
     font-size: 1rem;
     padding-bottom: 20px;
     color: white;
-
-
 }
 .container{
     width: 100%;
@@ -379,11 +374,11 @@ form span{
     margin-left: 10px; 
 } */
 .container2{
-    width: 350px;
+    width: 250px;
     height: 240px;
-    border: 1.5px solid black;
+    /* border: 1.5px solid black; */
     margin-bottom:10px;
-    margin-right:40px;
+    margin-left:60px;
     margin-top: 15px;
     text-align: center;
     font-size: 18px;
@@ -393,8 +388,9 @@ form span{
     width: 350px;
     height: 240px;
     border: 1.5px solid black;
+    float:right;
     margin-bottom: 10px;
-    margin-left:40px;
+    margin-left:370px;
     margin-top: 15px;
     text-align: center;
     font-size: 18px;
@@ -424,12 +420,15 @@ button:hover{
     font-size: 0.6em;
     font-weight: 400;
 }
+.unite{
+    padding-left: 20px;
+}
 .container3{
     float: right;
     display: flex;
-   flex-direction: column ;
-    padding-right: 20px;
-    
+   flex-direction: column;
+    padding-left: 20px;
+   
 }
 /* .savedrecordings{
     width: 350px;
